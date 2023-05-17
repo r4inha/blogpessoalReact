@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "./Carrossel.css";
 
 // Importanto Componentes do Swiper
-import { Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 function Carrossel() {
     return (
@@ -22,8 +22,12 @@ function Carrossel() {
                 pagination={{
                     clickable: true,
                 }}
+                autoplay={{
+                    delay:5000,
+                    disableOnInteraction: false,
+                }}
                 navigation={true}
-                modules={[Pagination, Navigation]}
+                modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
 
@@ -47,3 +51,5 @@ function Carrossel() {
         </>
     )
 }
+
+export default Carrossel;
