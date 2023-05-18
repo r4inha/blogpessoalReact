@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "./Carrossel.css";
 
 // Importanto Componentes do Swiper
-import { Autoplay, Pagination, Navigation } from "swiper";
+import {Autoplay, Pagination, Navigation } from "swiper";
 
 function Carrossel() {
     return (
@@ -23,28 +23,28 @@ function Carrossel() {
                     clickable: true,
                 }}
                 autoplay={{
-                    delay:5000,
+                    delay: 5000,
                     disableOnInteraction: false,
-                }}
+                  }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/EYLPjQm.jpg" alt="Imagem" />
+                    <img src="../../../src/assets/images/1228014.png" alt="Imagem" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/zl9uZzx.jpg" alt="Imagem" />
+                    <img src="../../../src/assets/images/Toronto-skyline-at-night-1.jpg" alt="Imagem" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/153khxC.png" alt="Imagem" />
+                    <img src="../../../src/assets/images/beira.jpg" alt="Imagem" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/RxL2yjz.jpg" alt="Imagem" />
+                    <img src="../../../src/assets/images/SJoséCampos.jpg" alt="Imagem" />
                 </SwiperSlide>
 
             </Swiper>
@@ -52,4 +52,4 @@ function Carrossel() {
     )
 }
 
-export default Carrossel;
+export default Carrossel

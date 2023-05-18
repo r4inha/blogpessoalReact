@@ -5,6 +5,7 @@ import Home from './assets/paginas/home/home'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './assets/paginas/home/home';
+import CadastroUsuario from './assets/paginas/cadastroUsuario/CadastroUsuario';
 
 function App() {
 

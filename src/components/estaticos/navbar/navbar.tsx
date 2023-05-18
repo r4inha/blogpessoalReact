@@ -1,49 +1,68 @@
-import React from "react";
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import {Box} from '@mui/material';
+import React from 'react';
+import { AppBar, Toolbar, Typography, Box, createTheme, ThemeProvider} from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import './Navbar.css'
 
-function Navbar() {
-    return (
+const theme = createTheme({  
+    typography: {
+      "fontFamily": 
+      `"Indie Flower", cursive` ,
+    },
+  });
+
+function Navbar(){
+    return(
         <>
-            <AppBar position="static">
-                <Toolbar variant="regular">
-                    <Box style={{ cursor: "pointer" }} >
-                        <Typography variant="h5" color="inherit">
-                            Blog Pessoal da Bianca
+            <AppBar position="static" style={{background: "#FFB3C1"}}  >
+                <Toolbar variant="dense">
+                <ThemeProvider theme={theme}>
+                    <Box className='cursor'>
+                        <Typography variant="h5" style={{color: "#C9184A", fontSize: 50}}>
+                            BlogPessoal
                         </Typography>
                     </Box>
-
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                Home
+                        <Link to='/home' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" style={{color: "#C9184A"}}>
+                                    Home
+                                </Typography>
+                            </Box>
+                        </Link>
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h6" style={{color: "#C9184A"}}>
+                                Criar Postagem
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                Posts
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h6" style={{color: "#C9184A"}}>
+                                Postagens
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h6" style={{color: "#C9184A"}}>
                                 Temas
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                Cadastrar tema
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h6" style={{color: "#C9184A"}}>
+                                Cadastrar Temas
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                Logout
-                            </Typography>
-                        </Box>
+                        <Link to='/login' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" style={{color: "#C9184A"}}>
+                                    Logout
+                                </Typography>
+                            </Box>
+                        </Link>
                     </Box>
+                    </ThemeProvider>
                 </Toolbar>
             </AppBar>
+          
         </>
-    )
-}
+    );
+};
 
 export default Navbar;
