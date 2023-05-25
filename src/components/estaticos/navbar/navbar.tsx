@@ -1,68 +1,89 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Box, createTheme, ThemeProvider} from '@material-ui/core';
+import react from 'react';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
-import './Navbar.css'
+import {useNavigate } from 'react-router-dom'
+import useLocalStorage from 'react-use-localstorage';
+import "./Navbar.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { UserState } from '../../../store/token/Reducer';
+import { addToken } from '../../../store/token/Actions';
 
-const theme = createTheme({  
-    typography: {
-      "fontFamily": 
-      `"Indie Flower", cursive` ,
-    },
-  });
+    function Navbar() {
+        //função de zerar o token
+        const token = useSelector<UserState, UserState["tokens"]>(
+            (state) => state.tokens
+          );
+          
+        let navigate = useNavigate();
 
-function Navbar(){
-    return(
-        <>
-            <AppBar position="static" style={{background: "#FFB3C1"}}  >
-                <Toolbar variant="dense">
-                <ThemeProvider theme={theme}>
-                    <Box className='cursor'>
-                        <Typography variant="h5" style={{color: "#C9184A", fontSize: 50}}>
+        const dispatch = useDispatch();
+        
+        //chama a função de token vazio
+        function goLogout(){
+            dispatch(addToken(''));
+            alert("Usuário deslogado")
+            navigate('/login')
+        }
+        
+        let navbarComponent;
+
+        //se token não for vazio
+        if(token != ""){
+            navbarComponent = <AppBar position="static" style={{ backgroundColor: "#7e1f1f" }}>
+            <Toolbar variant="dense">
+            <Link to='/home' className='text-decorator-none'>
+                <Box style={{ cursor: "pointer" }}>
+                        <Typography variant="h5" color="inherit">
                             BlogPessoal
                         </Typography>
+                </Box>
+                </Link>
+
+                <Box display="flex" justifyContent="start">
+                <Link to="/formularioPostagem" className="text-decorator-none">
+                    <Box mx={1} style={{ cursor: "pointer" }}  marginLeft={75}>
+                        <Typography style={{ color: "White" }}>
+                            CRIAR POSTAGEM
+                        </Typography>
                     </Box>
-                    <Box display="flex" justifyContent="start">
-                        <Link to='/home' className='text-decorator-none'>
-                            <Box mx={1} className='cursor'>
-                                <Typography variant="h6" style={{color: "#C9184A"}}>
-                                    Home
-                                </Typography>
-                            </Box>
-                        </Link>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" style={{color: "#C9184A"}}>
-                                Criar Postagem
-                            </Typography>
-                        </Box>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" style={{color: "#C9184A"}}>
-                                Postagens
-                            </Typography>
-                        </Box>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" style={{color: "#C9184A"}}>
-                                Temas
-                            </Typography>
-                        </Box>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" style={{color: "#C9184A"}}>
-                                Cadastrar Temas
-                            </Typography>
-                        </Box>
-                        <Link to='/login' className='text-decorator-none'>
-                            <Box mx={1} className='cursor'>
-                                <Typography variant="h6" style={{color: "#C9184A"}}>
-                                    Logout
-                                </Typography>
-                            </Box>
-                        </Link>
+                    </Link>
+                    <Link to='/posts' className='text-decorator-none'>
+                    <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Typography color="inherit">
+                            POSTAGENS
+                        </Typography>
                     </Box>
-                    </ThemeProvider>
-                </Toolbar>
-            </AppBar>
-          
-        </>
-    );
-};
+                    </Link>
+                    <Link to='/temas' className='text-decorator-none'>
+                    <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Typography color="inherit">
+                            TEMAS
+                        </Typography>
+                    </Box>
+                    </Link>
+                    <Link to='/formularioTema' className='text-decorator-none'>
+                    <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Typography color="inherit">
+                            CRIAR TEMA
+                        </Typography>
+                    </Box>
+                    </Link>
+                        <Box mx={1} style={{ cursor: "pointer" }} onClick={goLogout}>
+                            <Typography color="inherit">
+                                SAIR
+                            </Typography>
+                        </Box>
+                </Box>
+
+            </Toolbar>
+        </AppBar >
+        }
+return (
+    <>
+        {navbarComponent}
+    </>
+)
+}
 
 export default Navbar;

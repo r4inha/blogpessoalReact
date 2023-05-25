@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Indie+Flower&family=Rubik:wght@500&display=swap');
-
-.cursor{
+.cusor{
     cursor: pointer;
-    color:#f8f3f3;
-}
-
-.text-decorator-none{
+    color: white;
+  }
+  
+  .text-decorator-none{
     text-decoration: none;
     color: white;
-   font-family:'Courier New', Courier, monospace;
-}
+    font-size:1px;
+  }
