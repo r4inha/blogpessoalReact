@@ -20,9 +20,9 @@ function Footer() {
     if (token !== "") {
         footerComponent = <Grid container direction="row" justifyContent="center" alignItems="center">
             <Grid alignItems="center" item xs={12}>
-                <Box style={{ backgroundColor: "#6b1b1b", height: "80px" }}>
+                <Box style={{ backgroundColor: "#A927A9", height: "80px" }}>
                     <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                        <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
+                        <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga a equipe nas redes sociais </Typography>
                     </Box>
                     <Box display="flex" alignItems="center" justifyContent="center">
                         <a href="https://www.facebook.com/generationbrasil" target="_blank">
@@ -31,14 +31,14 @@ function Footer() {
                         <a href="https://www.instagram.com/generationbrasil/" target="_blank">
                             <InstagramIcon style={{ fontSize: 30, color: "white" }} />
                         </a>
-                        <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
+                        <a href="https://www.linkedin.com/in/bianca-luna-88aaa7116/" target="_blank">
                             <LinkedInIcon style={{ fontSize: 30, color: "white" }} />
                         </a>
                     </Box>
                 </Box>
-                <Box style={{ backgroundColor: "#6b1b1b", height: "60px" }}>
+                <Box style={{ backgroundColor: "#A927A9", height: "70px" }}>
                     <Box paddingTop={1}>
-                        <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
+                        <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2023 Copyright:</Typography>
                     </Box>
                     <Box>
                         <a target="_blank" href="https://brasil.generation.org">

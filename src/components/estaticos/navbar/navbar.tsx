@@ -30,48 +30,48 @@ import { addToken } from '../../../store/token/Actions';
 
         //se token não for vazio
         if(token != ""){
-            navbarComponent = <AppBar position="static" style={{ backgroundColor: "#7e1f1f" }}>
+            navbarComponent = <AppBar position="static" style={{ backgroundColor: "#A927A9" }}>
             <Toolbar variant="dense">
             <Link to='/home' className='text-decorator-none'>
                 <Box style={{ cursor: "pointer" }}>
                         <Typography variant="h5" color="inherit">
-                            BlogPessoal
+                            Blog Pessoal da Bianca
                         </Typography>
                 </Box>
                 </Link>
 
                 <Box display="flex" justifyContent="start">
                 <Link to="/formularioPostagem" className="text-decorator-none">
-                    <Box mx={1} style={{ cursor: "pointer" }}  marginLeft={75}>
+                    <Box mx={1} style={{ cursor: "pointer" }}  marginLeft={50}>
                         <Typography style={{ color: "White" }}>
-                            CRIAR POSTAGEM
+                            Criar Postagem
                         </Typography>
                     </Box>
                     </Link>
                     <Link to='/posts' className='text-decorator-none'>
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography color="inherit">
-                            POSTAGENS
+                            Postagens
                         </Typography>
                     </Box>
                     </Link>
                     <Link to='/temas' className='text-decorator-none'>
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography color="inherit">
-                            TEMAS
+                            Temas
                         </Typography>
                     </Box>
                     </Link>
                     <Link to='/formularioTema' className='text-decorator-none'>
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography color="inherit">
-                            CRIAR TEMA
+                            Criar temas
                         </Typography>
                     </Box>
                     </Link>
                         <Box mx={1} style={{ cursor: "pointer" }} onClick={goLogout}>
                             <Typography color="inherit">
-                                SAIR
+                                Logout
                             </Typography>
                         </Box>
                 </Box>

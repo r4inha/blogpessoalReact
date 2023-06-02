@@ -107,9 +107,9 @@ function CadastroPostagem() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h4" component="h1" align="center" >Cadastrar postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <Typography variant="h4" component="h1" align="center" >Criar postagem</Typography>
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="Título do post" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
@@ -128,8 +128,8 @@ function CadastroPostagem() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
-                        Finalizar
+                    <Button type="submit" variant="contained" color="secondary">
+                        Postar
                     </Button>
                 </FormControl>
             </form>
